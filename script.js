@@ -1,45 +1,113 @@
-// AOS animation
-AOS.init({
-    duration: 1000,
-    easing: 'ease-in-out',
-    once: true
-});
-
-// Scroll to Top Button
-const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-window.onscroll = function() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollToTopBtn.style.display = 'block';
-    } else {
-        scrollToTopBtn.style.display = 'none';
-    }
-};
-
-function scrollToTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+/* تنسيقات عامة */
+body {
+    background-color: #000;
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-// Matrix Rain Effect
-const canvas = document.createElement('canvas');
-const ctx = canvas.getContext('2d');
-document.body.appendChild(canvas);
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #111;
+}
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
 
-const letters = Array(256).join(1).split('');
+.nav-links a {
+    color: #0f0;
+    text-decoration: none;
+}
 
-const draw = () => {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00ff85';
-    letters.map((y_pos, index) => {
-        const text = String.fromCharCode(3e4 + Math.random() * 33);
-        const x_pos = index * 10;
-        ctx.fillText(text, x_pos, y_pos);
-        letters[index] = y_pos > 758 + Math.random() * 1e4 ? 0 : y_pos + 10;
-    });
-};
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
 
-setInterval(draw, 33);
+.social-icons a {
+    color: #0f0;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #00ff85;
+}
+
+.contact-btn {
+    color: #000;
+    background-color: #0f0;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background: url('hero-background.jpg') no-repeat center center/cover;
+}
+
+.skills-bar-section {
+    padding: 2rem;
+    background-color: #111;
+}
+
+.skill {
+    background-color: #0f0;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+#contact {
+    padding: 3rem 1rem;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+}
+
+#contact button {
+    background-color: #0f0;
+    color: #000;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* زر التمرير لأعلى */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #0f0;
+    color: #000;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: none;
+}
