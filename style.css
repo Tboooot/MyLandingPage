@@ -1,45 +1,59 @@
-// AOS animation
-AOS.init({
-    duration: 1000,
-    easing: 'ease-in-out',
-    once: true
-});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="skills.css"> <!-- ربط ملف CSS -->
+</head>
+<body>
 
-// Scroll to Top Button
-const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-window.onscroll = function() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollToTopBtn.style.display = 'block';
-    } else {
-        scrollToTopBtn.style.display = 'none';
-    }
-};
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <h1 class="section-title">My Skills</h1>
+        <div class="skills-container">
+            <!-- HTML Icon -->
+            <div class="skill" data-aos="flip-right">
+                <i class="fab fa-html5"></i>
+                <p>HTML</p>
+            </div>
+            <!-- CSS Icon -->
+            <div class="skill" data-aos="flip-right">
+                <i class="fab fa-css3-alt"></i>
+                <p>CSS</p>
+            </div>
+            <!-- JavaScript Icon -->
+            <div class="skill" data-aos="flip-right">
+                <i class="fab fa-js"></i>
+                <p>JavaScript</p>
+            </div>
+            <!-- Python Icon -->
+            <div class="skill" data-aos="flip-right">
+                <i class="fab fa-python"></i>
+                <p>Python</p>
+            </div>
+            <!-- C Icon -->
+            <div class="skill" data-aos="flip-right">
+                <i class="fas fa-code"></i>
+                <p>C</p>
+            </div>
+            <!-- Java Icon -->
+            <div class="skill" data-aos="flip-right">
+                <i class="fab fa-java"></i>
+                <p>Java</p>
+            </div>
+        </div>
+    </section>
 
-function scrollToTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-
-// Matrix Rain Effect
-const canvas = document.createElement('canvas');
-const ctx = canvas.getContext('2d');
-document.body.appendChild(canvas);
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const letters = Array(256).join(1).split('');
-
-const draw = () => {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00ff85';
-    letters.map((y_pos, index) => {
-        const text = String.fromCharCode(3e4 + Math.random() * 33);
-        const x_pos = index * 10;
-        ctx.fillText(text, x_pos, y_pos);
-        letters[index] = y_pos > 758 + Math.random() * 1e4 ? 0 : y_pos + 10;
-    });
-};
-
-setInterval(draw, 33);
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+</html>
