@@ -1,4 +1,4 @@
-/* تنسيقات عامة */
+/* تنسيق عام */
 body {
     background-color: #000;
     color: #0f0;
@@ -9,105 +9,67 @@ body {
     scroll-behavior: smooth;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #111;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-}
-
-.nav-links a {
-    color: #0f0;
-    text-decoration: none;
-}
-
-.social-icons {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-icons a {
-    color: #0f0;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #00ff85;
-}
-
-.contact-btn {
-    color: #000;
-    background-color: #0f0;
-    padding: 0.5rem 1rem;
-    border: none;
-    cursor: pointer;
-}
-
-.hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+.skills-section {
+    padding: 4rem 1rem;
     text-align: center;
-    background: url('hero-background.jpg') no-repeat center center/cover;
 }
 
-.skills-bar-section {
-    padding: 2rem;
-    background-color: #111;
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #0f0;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .skill {
-    background-color: #0f0;
-    color: #000;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-}
-
-#contact {
-    padding: 3rem 1rem;
     background-color: #111;
-    color: #fff;
+    border: 2px solid #0f0;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 150px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#contact input, #contact textarea {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #333;
-    border-radius: 5px;
-    background-color: #222;
+.skill i {
+    font-size: 3rem;
+    color: #0f0;
+    transition: color 0.3s ease;
+}
+
+.skill p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
     color: #fff;
 }
 
-#contact button {
-    background-color: #0f0;
-    color: #000;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* تأثير hover على المهارات */
+.skill:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 4px 20px rgba(0, 255, 133, 0.5);
 }
 
-/* زر التمرير لأعلى */
-#scrollToTopBtn {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background-color: #0f0;
-    color: #000;
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-    display: none;
+.skill:hover i {
+    color: #00ff85;
+}
+
+/* تنسيق الأيقونات */
+.skill i.fab, .skill i.fas {
+    animation: spin 4s infinite linear;
+}
+
+/* دوران الأيقونات */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
