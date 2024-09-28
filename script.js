@@ -1,11 +1,9 @@
-// AOS animation
 AOS.init({
     duration: 1000,
     easing: 'ease-in-out',
     once: true
 });
 
-// Scroll to Top Button
 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 window.onscroll = function() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -20,7 +18,6 @@ function scrollToTop() {
     document.documentElement.scrollTop = 0;
 }
 
-// Matrix Rain Effect
 const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
 document.body.appendChild(canvas);
